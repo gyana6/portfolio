@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <!-- <img src="images/logo.png" alt="logo" class="logo"> -->
+                <p class="hp"><span>G</span>yana.</p>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <!-- <p>UI/UX Designer</p> -->
+                <h1>Hi, I'm <span>Gyana</span> Ranjan Sahoo<br>From Bhubaneswar</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------About-------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="/images/user.jpg" alt="user_img">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p class="paragraph">I am Gyana Ranjan Sahoo,From Bhubaneswar. In my family apart from my parents I
+                        have an elder
+                        brother. I have completed BSc in Sri Jaydev college,Bhubaneswar. Now I am pursuing MCA in
+                        Raajdhani Engineering college,Bhubaneswar. I have learnt programming languages like C , java ,
+                        HTML , CSS , java script. My Strengths are positive attitude,deadline oriented,quick
+                        learner,dedicated. My hobbies are bike riding,listning to music,cooking,learning about new
+                        gadgets.</p>
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Programming Language</span><br>HTML 5,CSS 3,Java Script(Basic),C language,CORE
+                                JAVA</li>
+                            <li><span>Operating System</span><br>WINDOWS OPERATING SYSTEM</li>
+                            <li><span>Tools</span><br>ORACLE,VS CODE,IntelliJ IDEA</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>MCA</span><br>From Raajdhani Engineering College,Bhubaneswar</li>
+                            <li><span>BSc</span><br>From Shri Jaydev College of Education and Technology,Bhubaneswar
+                            </li>
+                            <li><span>Intermediate</span><br>Maharishi College of Natural Law,Bhubaneswar</li>
+                            <li><span>10th</span><br>INST. Of Integral Education,Bhubaneswar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------cotact---------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> gyanaranjansahoo885@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +917539078690</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/gyanaranjansahoo.rinku/" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mr.___gs/?hl=en" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/gyana-ranjan-sahoo-0b2817166/" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="/My_CV.pdf" download class="btn btn1">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; Gyana Ranjan Sahoo.</p>
+        </div>
+    </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        function openmenu() {
+            document.getElementById("sidemenu").style.right = "0";
+        }
+        function closemenu() {
+            document.getElementById("sidemenu").style.right = "-200px";
+        }
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwfFVNWLQvKjkjMbyFmD2E-1YFvqgwjyXr2y2RM3mvApqxnAED3D8HYEqR52vO1_96o/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML="Message sent successfully";
+                    setTimeout(()=>{
+                        msg.innerHTML=""
+                    },5000)
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
